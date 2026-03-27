@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Manage Wedding Venues</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        .venue-card {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 10px 0;
+        }
+
+        img {
+            max-width: 150px;
+        }
+
+        .card a {
+            text-decoration: none;
+            background-color: #28a745;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .card a:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Manage Wedding Venues</h1>
+    <!-- <div class="card">
+        <a href="{% url 'add_venue' %}">➕ Add New Venue</a>
+    </div> -->
+    <br>
+
+    {% for venue in venues %}
+    <div class="venue-card">
+        <h3>{{ venue.name }} - ₹{{ venue.price }}</h3>
+        {% if venue.image %}
+            <img src="{{ venue.image.url }}" alt="{{ venue.name }}">
+            <img src="{% static 'images/default_venue.jpg' %}" alt="No Image Available">
+        {% endif %}
+        <p>{{ venue.description }}</p>
+        <a href="{% url 'edit_venue' venue.id %}">✏️ Edit</a> |
+        <a href="{% url 'delete_venue' venue.id %}">🗑️ Delete</a>
+    </div>
+    {% empty %}
+    <p>No venues found.</p>
+    {% endfor %}
+</body>
+
+</html>

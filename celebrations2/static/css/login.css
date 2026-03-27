@@ -1,0 +1,81 @@
+h1,
+h2 {
+    font-size: 30px;
+    text-align: center;
+}
+body{
+    background-image: url(login.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    
+ }
+
+form {
+    border: 5px solid black;
+    height: auto;
+    width: 500px;
+    justify-self: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    margin-top: 50px;
+    padding-top: 10px;
+    background: transparent;
+    backdrop-filter: blur(20px);
+
+}
+
+label {
+
+    font-size: 20px;
+    padding-left: 3px;
+    font-weight: bold;
+    padding-top: 100px;
+    margin-top: 100px;
+
+
+
+}
+
+input {
+    width: 90%;
+    padding: 8px;
+    margin-top: 20px;
+    border: px1px solid #ccc;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin-top: 20px;
+
+}
+.login{
+    padding-top: 10px;
+}
+button {
+    font-size: 20px;
+    padding: 20px;
+    margin-left: 190px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-image: linear-gradient(blue,pink);
+}
+a{
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    padding-left: 130px;
+    text-align: center;
+}
+p{
+    font-size: 20px;
+    text-align: center;
+}
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+}

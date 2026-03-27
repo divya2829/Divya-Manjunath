@@ -1,0 +1,395 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flower Theme</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .gallery-container {
+      max-height: 100vh;
+      overflow-y: auto;
+      padding: 40px 20px;
+      border-radius: 20px;
+      color: #FFD700;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .gallery .card {
+      background-color: rgba(255, 255, 255, 0.85);
+      border: none;
+      border-radius: 12px;
+      transition: transform 0.3s ease-in-out;
+      position: relative;
+    }
+
+    .gallery .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      border-radius: 12px 12px 0 0;
+      object-fit: cover;
+      height: 200px;
+    }
+
+    .booking-button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #ffc107;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 4px 6px rgba(255, 193, 7, 0.3);
+      text-decoration: none;
+      margin-top: 30px;
+    }
+
+    .booking-button:hover {
+      background-color: #e0a800;
+      transform: scale(1.05);
+      box-shadow: 0 8px 12px rgba(255, 193, 7, 0.4);
+    }
+
+    .form-check-input {
+      margin-top: 10px;
+    }
+
+    .cost-label {
+      font-weight: bold;
+      margin-top: 10px;
+      color: #333;
+    }
+
+    /* View Details Button */
+    .details-btn {
+      margin-top: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .details-btn:hover {
+      background-color: #0056b3;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <video class="video-bg" autoplay loop muted>
+    <source src="{% static 'videos/galvideo.mp4' %}" type="video/mp4" />
+  </video>
+
+  <form id="bookingForm">
+    <div class="gallery-container text-light">
+      <h1 class="mb-4">Flower Theme</h1>
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 gallery">
+
+          <!-- Image 1 -->
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/outdoorflower1.jpg' %}" alt="Yellow Theme 1" />
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹5,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" value="Yellow Theme 1" required />
+                  <label class="form-check-label">Select Pink Cake </label>
+                </div>
+                <button type="button" class="details-btn" data-bs-toggle="modal" data-bs-target="#detailsModal1">
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image 2 -->
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/outdoorflower2.jpg' %}" alt="Yellow Cake" />
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹45,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" value="White & Pink Theme" />
+                  <label class="form-check-label">Select White &amp; Pink Theme</label>
+                </div>
+                <button type="button" class="details-btn" data-bs-toggle="modal" data-bs-target="#detailsModal2">
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image 3 -->
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/outdoorflower3.jpg' %}" alt="Flower with sweets Theme" />
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹40,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" value="Flower with sweets Theme" />
+                  <label class="form-check-label">Select Flower with sweets Theme </label>
+                </div>
+                <button type="button" class="details-btn" data-bs-toggle="modal" data-bs-target="#detailsModal3">
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image 4 -->
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/outdoorflower4.jpg' %}" alt="Royal Theme" />
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹60,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" value="Royal Theme" />
+                  <label class="form-check-label">Select Royal Theme </label>
+                </div>
+                <button type="button" class="details-btn" data-bs-toggle="modal" data-bs-target="#detailsModal4">
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image 5 -->
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/outdoorflower5.jpg' %}" alt="Hanging Flower Theme" />
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹35,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" value="Hanging Flower Theme" />
+                  <label class="form-check-label">Select Hanging Flower Theme </label>
+                </div>
+                <button type="button" class="details-btn" data-bs-toggle="modal" data-bs-target="#detailsModal5">
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image 6 -->
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/outdoorflower6.jpg' %}" alt="Simple Royal Theme" />
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹25,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" value="Simple Royal Theme" />
+                  <label class="form-check-label">Select Simple Royal Theme </label>
+                </div>
+                <button type="button" class="details-btn" data-bs-toggle="modal" data-bs-target="#detailsModal6">
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Book Now Button -->
+        <div class="text-center mt-4">
+          <button type="button" class="booking-button" onclick="redirectToBookingPage();">🎊 Book
+            Now</button>
+        </div>
+
+      </div>
+    </div>
+  </form>
+
+  <!-- Modals for View Details -->
+
+  <!-- Modal 1 -->
+  <div class="modal fade" id="detailsModal1" tabindex="-1" aria-labelledby="detailsModalLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel1">Yellow Theme 1 Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Includes: Flower arches, flower garlands, themed table setup</li>
+            <li>Pink cake with floral decorations</li>
+            <li>Extra Details: Soft pink roses, elegant fairy lights, and pastel ribbons to complement the floral theme.</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div class="modal fade" id="detailsModal2" tabindex="-1" aria-labelledby="detailsModalLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel2">White &amp; Pink Theme Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Flower count: 60</li>
+            <li>Colors Used: White, Pink</li>
+            <li>Includes: Elegant flower clusters, table centerpieces, floral arrangements</li>
+            <li>Additional items: Custom cake with white & pink frosting</li>
+            <li>Extra Details: Delicate lace table covers and pink peonies for a classic, romantic ambiance.</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3 -->
+  <div class="modal fade" id="detailsModal3" tabindex="-1" aria-labelledby="detailsModalLabel3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel3">Flower with sweets Theme Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Flower count: 55</li>
+            <li>Colors Used: Yellow, Pink, White</li>
+            <li>Includes: Flower bouquets, candy displays, floral decor</li>
+            <li>Additional items: Sweet treats and themed party favors</li>
+            <li>Extra Details: Candy jars in pastel colors, floral wreaths, and sugar cookie decorations matching the theme.</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4 -->
+  <div class="modal fade" id="detailsModal4" tabindex="-1" aria-labelledby="detailsModalLabel4" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel4">Royal Theme Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Flower count: 70</li>
+            <li>Colors Used: Gold, Yellow, White</li>
+            <li>Includes: Luxury flower arches, royal drapes, elegant table decor</li>
+            <li>Additional items: Customized royal cake and lighting</li>
+            <li>Extra Details: Velvet table runners, golden cutlery, and crystal chandeliers to enhance the royal feel.</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5 -->
+  <div class="modal fade" id="detailsModal5" tabindex="-1" aria-labelledby="detailsModalLabel5" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel5">Hanging Flower Theme Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Flower count: 45</li>
+            <li>Colors Used: Pink, Purple, White</li>
+            <li>Includes: Hanging floral arrangements, flower garlands, themed lighting</li>
+            <li>Additional items: Delicate hanging cake topper</li>
+            <li>Extra Details: Cascading flower strings, soft uplighting in purple hues, and elegant hanging lanterns.</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6 -->
+  <div class="modal fade" id="detailsModal6" tabindex="-1" aria-labelledby="detailsModalLabel6" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel6">Simple Royal Theme Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Flower count: 40</li>
+            <li>Colors Used: White, Yellow, Gold</li>
+            <li>Includes: Minimalistic flower setups, royal cake design</li>
+            <li>Additional items: Elegant table settings and lighting</li>
+            <li>Extra Details: Clean white linens, simple gold accents, and subtle warm lighting for a cozy yet regal vibe.</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function redirectToBookingPage() {
+      const selectedTheme = document.querySelector('input[name="theme"]:checked');
+      if (selectedTheme) {
+        const themeLabel = selectedTheme.parentElement.innerText.trim();
+        const bookingUrl = "{% url 'theme_booking' %}?theme=" + encodeURIComponent(themeLabel);
+        window.location.href = bookingUrl;
+      } else {
+        alert("Please select a theme.");
+      }
+    }
+  </script>
+
+</body>
+
+</html>

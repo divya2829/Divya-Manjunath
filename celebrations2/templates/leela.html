@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Leela Palace</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url("{% static 'photos/ven.jpg' %}");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 850px;
+        }
+
+        .container video {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .info {
+            max-width: 500px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <video autoplay loop muted>
+            <source src="{% static 'videos/leela.mp4' %}" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+        <div class="info">
+            <h2>Leela Palace</h2>
+
+            <p><strong>Details:</strong></p>
+            <p>
+                The Leela Palace in Kodihalli, Bangalore, is a luxurious 5-star venue spread across 9 acres. Known for its grand architecture, lush gardens, and water features, it offers an opulent setting for weddings and events.
+            </p>
+
+            <p><strong>Venue Details:</strong></p>
+            <ul>
+                <li><strong>Kamal & Sitara:</strong> 60–80 guests</li>
+                <li><strong>Nithya:</strong> 70–150 guests</li>
+                <li><strong>Diya Terrace:</strong> 100–150 guests</li>
+                <li><strong>Royal Ballroom:</strong> 200–300 guests</li>
+                <li><strong>Grand Ballroom:</strong> 600–900 guests</li>
+                <li><strong>Total Capacity:</strong> Up to 1,500 floating guests</li>
+            </ul>
+
+            <p><strong>Catering & Food:</strong></p>
+            <ul>
+                <li>In-house catering only; outside catering not allowed</li>
+                <li>Vegetarian menu starts at ₹3,000 per plate</li>
+                <li>Non-vegetarian menu starts at ₹3,500 per plate</li>
+            </ul>
+
+            <p><strong>Music & Entertainment:</strong></p>
+            <ul>
+                <li>In-house DJ available</li>
+                <li>Outside DJs allowed</li>
+                <li>Late-night music not permitted</li>
+            </ul>
+
+            <p><strong>Pricing & Booking:</strong></p>
+            <ul>
+                <li>Advance Payment: 50% of estimated cost required</li>
+                <li>No separate hall rental — charges based on per plate pricing</li>
+                <li>Valet parking available; space for 500 vehicles</li>
+                <li>Accommodation: 356 rooms available; average ₹15,000 per night</li>
+            </ul>
+
+        </div>
+    </div>
+</body>
+
+</html>

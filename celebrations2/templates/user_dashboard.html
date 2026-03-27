@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard - Alfa Celebrations</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <style>
+        body {
+            background: #eaf6ff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+        .dashboard-box {
+            background: white;
+            padding: 40px;
+            margin: auto;
+            width: 60%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            border-radius: 12px;
+        }
+        h1 {
+            color: #004aad;
+        }
+        p {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-box">
+        <h1>Welcome, User!</h1>
+        <p>You have successfully logged into your user dashboard.</p>
+        <p>Browse venues, manage your bookings, and explore services.</p>
+        <p><a href="{% url 'logout' %}">Logout</a></p>
+    </div>
+</body>
+</html>

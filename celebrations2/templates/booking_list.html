@@ -1,0 +1,129 @@
+{% load static %}
+
+{% block content %}
+<style>
+  /* Light subtle gradient background for the entire page */
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #d81b60, #6a1b9a); /* dark pink to purple */
+  }
+
+  /* Center container vertically and horizontally */
+  .centered-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  /* White card container with subtle shadow and rounded corners */
+  .card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 30px;
+    max-width: 900px;
+    width: 100%;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead th {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+  }
+
+  tbody td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+  }
+
+  tbody tr:hover {
+    background-color: #f1f7ff;
+  }
+
+  .btn {
+    font-size: 0.875rem;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    color: white;
+    display: inline-block;
+  }
+
+  .btn-primary {
+    background-color: #007bff;
+  }
+
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+
+  .btn-danger {
+    background-color: #dc3545;
+  }
+
+  .btn-danger:hover {
+    background-color: #a71d2a;
+  }
+</style>
+
+<div class="centered-container">
+  <div class="card">
+    <h2>Venue Bookings</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Date</th>
+          <th>Venue</th>
+          <th>Payment</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for booking in bookings %}
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ booking.name }}</td>
+          <td>{{ booking.email }}</td>
+          <td>{{ booking.phone }}</td>
+          <td>{{ booking.date }}</td>
+          <td>{{ booking.venue }}</td>
+          <td>{{ booking.payment }}</td>
+          <td>
+            <a href="{% url 'edit_booking' booking.id %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'delete_booking' booking.id %}" class="btn btn-danger"
+              onclick="return confirm('Are you sure you want to delete this booking?');">Delete</a>
+          </td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="8" style="text-align:center; color: #777;">No bookings found.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

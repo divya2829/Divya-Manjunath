@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mannat Banquet Hall</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("{% static 'photos/ven.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container video {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .info {
+            max-width: 400px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <video autoplay loop muted>
+            <source src="{% static 'videos/mannat.mp4' %}" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+        <div class="info">
+            <h2>Mannat Banquet Hall</h2>
+
+            <p><strong>Venue Details:</strong></p>
+            <ul>
+                <li>Location: RT Nagar, Bangalore</li>
+                <li>Suitable for weddings, receptions, corporate events, and parties</li>
+                <li>Event Spaces: Banquet hall, lawn, and terrace garden</li>
+                <li>Capacity: 50 to 600 guests (depending on space selected)</li>
+            </ul>
+
+            <p><strong>Facilities & Services:</strong></p>
+            <ul>
+                <li>Event Spaces: Indoor banquet hall, outdoor lawn, and terrace garden</li>
+                <li>Amenities: Bridal dressing room, power backup, WiFi</li>
+                <li>Catering & Decoration:
+                    <ul>
+                        <li>In-house catering, decoration, and DJ services available</li>
+                        <li>External vendors also allowed</li>
+                    </ul>
+                </li>
+                <li>Pricing: ₹50,000 to ₹74,999 per day (excluding catering)</li>
+                <li>Alcohol Policy: Alcohol is not permitted</li>
+                <li>Booking & Payment:
+                    <ul>
+                        <li>30% advance payment required</li>
+                        <li>Flexible cancellation policy</li>
+                    </ul>
+                </li>
+                <li>Timings: Open from 11:00 AM to 11:00 PM</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

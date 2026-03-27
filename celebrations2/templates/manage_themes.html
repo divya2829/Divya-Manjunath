@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Themes</title>
+    <style>
+        body { font-family: Arial; }
+        .theme-card { border: 1px solid #ccc; padding: 20px; margin: 10px 0; }
+        img { max-width: 150px; }
+    </style>
+</head>
+<body>
+    <h1>Manage Themes</h1>
+    <a href="{% url 'add_theme' %}">➕ Add New Theme</a>
+
+    {% for theme in themes %}
+        <div class="theme-card">
+            <h3>{{ theme.name }} ({{ theme.category }}) - ₹{{ theme.price }}</h3>
+            <img src="{{ theme.image.url }}" alt="{{ theme.name }}">
+            <p>{{ theme.description }}</p>
+            <a href="{% url 'edit_theme' theme.id %}">✏️ Edit</a> |
+            <a href="{% url 'delete_theme' theme.id %}">🗑️ Delete</a>
+        </div>
+    {% empty %}
+        <p>No themes found.</p>
+    {% endfor %}
+</body>
+</html>

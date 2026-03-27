@@ -1,0 +1,102 @@
+<!-- templates/add_venue.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Add Venue - Event Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            padding: 20px;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        /* Remove number input arrows */
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+            /* Firefox */
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            background-color: #28a745;
+            border: none;
+            padding: 12px;
+            color: white;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Add Venue</h2>
+        <form method="POST" action="{% url 'add_venue' %}">
+            {% csrf_token %}
+
+            <label for="name">Venue Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter venue name" required />
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" placeholder="Enter venue location" required />
+
+            <label for="capacity">Capacity:</label>
+            <input type="number" id="capacity" name="capacity" placeholder="Enter venue capacity" required />
+
+            <label for="image">Venue Image:</label>
+            <input type="file" id="image" name="image" accept="image/*" />
+
+            <button type="submit">Add Venue</button>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>White Petals</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("{% static 'photos/ven.jpg' %}");
+            background-size: cover;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container video {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .info {
+            max-width: 400px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <video autoplay loop muted>
+            <source src="{% static 'videos/white.mp4' %}" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+        <div class="info">
+            <h2>White Petals</h2>
+            <p>White Petals Palace Grounds in Bangalore is a well-known venue for grand events like weddings,
+                receptions, corporate gatherings, and exhibitions. Here are some key details:</p>
+
+            <p><strong>Venue Details:</strong></p>
+            <ul>
+                <li>Location: Palace Grounds, off Jayamahal Main Road, near Mekhri Circle</li>
+                <li>Seating Capacity: 2,000 guests</li>
+                <li>Floating Capacity: 3,500 to 5,000 guests</li>
+                <li>Spaces Available:
+                    <ul>
+                        <li>Elegant banquet hall with chandeliers and plush seating</li>
+                        <li>Expansive, landscaped lawn suitable for large outdoor events</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p><strong>Facilities & Services:</strong></p>
+            <ul>
+                <li>Parking: Space for up to 450-500 vehicles with valet parking</li>
+                <li>Rooms: 8 complimentary changing rooms available</li>
+                <li>Catering: In-house catering available; non-veg food is allowed</li>
+                <li>Alcohol: Allowed, but outside alcohol is not permitted</li>
+                <li>Decor: In-house decoration provided, external decorators allowed (starting at ₹1,75,000)</li>
+                <li>Music & DJ: Basic music system available; in-house DJ and external DJs permitted</li>
+                <li>Baarat & Late-night Events: Allowed with venue-specific terms</li>
+                <li>Booking & Pricing:
+                    <ul>
+                        <li>Advance Payment: 50% of the total estimated amount to confirm the booking</li>
+                        <li>Event Timings: Typically from 3:00 PM to 2:00 AM</li>
+                        <li>Tax: 18% on food and beverages</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

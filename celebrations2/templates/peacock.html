@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Peacock Groove</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("{% static 'photos/ven.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container video {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .info {
+            max-width: 400px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <video autoplay loop muted>
+            <source src="{% static 'videos/peacock.mp4' %}" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+        <div class="info">
+            <h2>The Peacock Groove</h2>
+
+            <p><strong>Details:</strong></p>
+            <ul>
+                <li>Location: Hesaraghatta, Bangalore</li>
+                <li>Semi-outdoor venue with rustic charm, marigold flowers, fountains, and elegant drapings</li>
+                <li>Perfect for weddings and other celebrations</li>
+            </ul>
+
+            <p><strong>Venue Features:</strong></p>
+            <ul>
+                <li>Location: Yelahanka-Hesaraghatta, Bangalore</li>
+                <li>Guest Capacity: 300 to 1500</li>
+                <li>Event Spaces: Outdoor lawn and indoor hall</li>
+                <li>Parking: Space for up to 400 vehicles</li>
+                <li>Rooms: Two complimentary rooms (no additional lodging)</li>
+                <li>Accessibility:
+                    <ul>
+                        <li>4.9 km from Chikkabavare Railway Station</li>
+                        <li>21.1 km from Kempegowda International Airport</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p><strong>Pricing & Policies:</strong></p>
+            <ul>
+                <li>Rental Cost: Starts from ₹3,10,000 per day</li>
+                <li>Per Plate Cost: ₹750 - ₹1000</li>
+                <li>Advance Payment: 50% required at booking</li>
+                <li>Cancellation Policy: Non-cancellable</li>
+            </ul>
+
+            <p><strong>Catering & Decor:</strong></p>
+            <ul>
+                <li>Catering: Vegetarian only; outside caterers allowed</li>
+                <li>Decor: Both in-house and outside decorators permitted</li>
+                <li>Alcohol: Not allowed</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

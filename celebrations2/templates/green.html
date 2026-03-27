@@ -1,0 +1,338 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Green Theme</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .gallery-container {
+      max-height: 100vh;
+      overflow-y: auto;
+      padding: 40px 20px;
+      border-radius: 20px;
+      color: #FFD700;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .gallery .card {
+      background-color: rgba(255, 255, 255, 0.85);
+      border: none;
+      border-radius: 12px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .gallery .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      border-radius: 12px 12px 0 0;
+      object-fit: cover;
+      height: 200px;
+    }
+
+    .booking-button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #ffc107;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 4px 6px rgba(255, 193, 7, 0.3);
+      text-decoration: none;
+      margin-top: 30px;
+    }
+
+    .booking-button:hover {
+      background-color: #e0a800;
+      transform: scale(1.05);
+      box-shadow: 0 8px 12px rgba(255, 193, 7, 0.4);
+    }
+
+    .form-check-input {
+      margin-top: 10px;
+    }
+
+    .cost-label {
+      font-weight: bold;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+
+  <video class="video-bg" autoplay loop muted>
+    <source src="{% static 'videos/galvideo.mp4' %}" type="video/mp4" />
+  </video>
+
+  <form id="bookingForm">
+    <div class="gallery-container text-light">
+      <h1 class="mb-4">Green Theme</h1>
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 gallery">
+
+          <!-- Card 1 -->
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/green1.jpg' %}" alt="Golden Balloon" />
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹45,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" id="goldenBalloon" value="Golden Balloon" required />
+                  <label class="form-check-label" for="goldenBalloon">Select Golden Balloon Theme</label>
+                </div>
+                <button type="button" class="btn btn-link text-warning mt-2" data-bs-toggle="modal" data-bs-target="#modalGoldenBalloon">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/green2.jpg' %}" alt="Candle Cake" />
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹35,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" id="candleCake" value="Candle Cake" />
+                  <label class="form-check-label" for="candleCake">Select Candle Cake</label>
+                </div>
+                <button type="button" class="btn btn-link text-warning mt-2" data-bs-toggle="modal" data-bs-target="#modalCandleCake">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/green3.jpg' %}" alt="Park Cake" />
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹40,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" id="parkCake" value="Park Cake" />
+                  <label class="form-check-label" for="parkCake">Select Park Cake</label>
+                </div>
+                <button type="button" class="btn btn-link text-warning mt-2" data-bs-toggle="modal" data-bs-target="#modalParkCake">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/green4.jpg' %}" alt="Cake" />
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹5,500</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" id="cake" value="Cake" />
+                  <label class="form-check-label" for="cake">Select Cake</label>
+                </div>
+                <button type="button" class="btn btn-link text-warning mt-2" data-bs-toggle="modal" data-bs-target="#modalCake">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/green5.jpg' %}" alt="Aqua Theme" />
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹55,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" id="aquaTheme" value="Aqua Theme" />
+                  <label class="form-check-label" for="aquaTheme">Select Aqua Theme</label>
+                </div>
+                <button type="button" class="btn btn-link text-warning mt-2" data-bs-toggle="modal" data-bs-target="#modalAquaTheme">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/green6.jpg' %}" alt="Dark Green Theme" />
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹45,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" id="darkGreenTheme" value="Dark Green Theme" />
+                  <label class="form-check-label" for="darkGreenTheme">Select Dark Green Theme</label>
+                </div>
+                <button type="button" class="btn btn-link text-warning mt-2" data-bs-toggle="modal" data-bs-target="#modalDarkGreenTheme">View Details</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Book Now Button -->
+        <div class="text-center mt-4">
+          <button type="button" class="booking-button" onclick="redirectToBookingPage();">🎊 Book Now</button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <!-- Modals for View Details -->
+
+  <!-- Modal Golden Balloon -->
+  <div class="modal fade" id="modalGoldenBalloon" tabindex="-1" aria-labelledby="modalGoldenBalloonLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalGoldenBalloonLabel">Golden Balloon Theme Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Approx 150 balloons in gold and green shades</li>
+            <li>Green foliage decoration with LED lights</li>
+            <li>Customized cake with golden accents</li>
+            <li>Includes table setup and banners</li>
+            <li>Cost: ₹45,000 approx.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Candle Cake -->
+  <div class="modal fade" id="modalCandleCake" tabindex="-1" aria-labelledby="modalCandleCakeLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalCandleCakeLabel">Candle Cake Theme Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Elegant candle centerpiece and cake design</li>
+            <li>Green and white color palette</li>
+            <li>Includes decorative candles, floral arrangements</li>
+            <li>Perfect for evening events</li>
+            <li>Cost: ₹35,000 approx.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Park Cake -->
+  <div class="modal fade" id="modalParkCake" tabindex="-1" aria-labelledby="modalParkCakeLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalParkCakeLabel">Park Cake Theme Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Nature-inspired decorations with greenery</li>
+            <li>Park themed cake with edible flowers</li>
+            <li>Includes balloon arches and table setups</li>
+            <li>Cost: ₹40,000 approx.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Cake -->
+  <div class="modal fade" id="modalCake" tabindex="-1" aria-labelledby="modalCakeLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalCakeLabel">Cake Theme Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Simple and elegant cake decoration</li>
+            <li>Green and cream color scheme</li>
+            <li>Includes table decoration and small balloon sets</li>
+            <li>Cost: ₹5,500 approx.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Aqua Theme -->
+  <div class="modal fade" id="modalAquaTheme" tabindex="-1" aria-labelledby="modalAquaThemeLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalAquaThemeLabel">Aqua Theme Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Vibrant aqua and green balloons (approx 200)</li>
+            <li>Includes floral and water-themed props</li>
+            <li>Customized aqua theme cake</li>
+            <li>Cost: ₹55,000 approx.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Dark Green Theme -->
+  <div class="modal fade" id="modalDarkGreenTheme" tabindex="-1" aria-labelledby="modalDarkGreenThemeLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalDarkGreenThemeLabel">Dark Green Theme Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li>Luxurious dark green balloons and drapes</li>
+            <li>Elegant cake with dark green accents</li>
+            <li>Includes premium lighting and setup</li>
+            <li>Cost: ₹45,000 approx.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function redirectToBookingPage() {
+      const selectedTheme = document.querySelector('input[name="theme"]:checked');
+      if (selectedTheme) {
+        const themeValue = selectedTheme.value;
+        window.location.href = `{% url 'theme_booking' %}?theme=${encodeURIComponent(themeValue)}`;
+      } else {
+        alert("Please select a theme.");
+      }
+    }
+  </script>
+</body>
+
+</html>

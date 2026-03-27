@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login - Alfa Shockwave Celebrations</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <style>
+        body {
+            background-image: url("{% static 'photos/login.jpg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+
+        .login-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .login-buttons a {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #004aad;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-buttons a:hover {
+            background-color: #002e7d;
+        }
+
+        .footer {
+            margin-top: 100px;
+            font-size: 14px;
+            color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to Alfa Shockwave Celebrations</h1>
+
+    <div class="login-buttons">
+        <a href="{% url 'user_login' %}">User Login</a>
+        <a href="{% url 'admin_login' %}">Admin Login</a>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 Alfa Shockwave Celebrations. All rights reserved.</p>
+    </div>
+</body>
+
+</html>

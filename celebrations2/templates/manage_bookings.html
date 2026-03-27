@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Manage Bookings</title>
+  <style>
+    table { border-collapse: collapse; width: 90%; margin: 20px auto; }
+    th, td { border: 1px solid #999; padding: 8px 12px; text-align: left; }
+    th { background-color: #eee; }
+    a { text-decoration: none; color: blue; }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center;">Manage Bookings</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Theme</th>
+        <th>Event Date</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for booking in bookings %}
+      <tr>
+        <td>{{ booking.name }}</td>
+        <td>{{ booking.email }}</td>
+        <td>{{ booking.phone }}</td>
+        <td>
+          {% if booking.theme %}
+            {{ booking.theme.name }}
+          {% else %}
+            No Theme
+          {% endif %}
+        </td>
+        <td>{{ booking.event_date }}</td>
+        <td>{{ booking.start_time }}</td>
+        <td>{{ booking.end_time }}</td>
+        <td>
+          <a href="{% url 'edit_booking' booking.id %}">Edit</a> |
+          <a href="{% url 'delete_booking_confirm' booking.id %}">Delete</a>
+        </td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="8" style="text-align:center;">No bookings found.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <p style="text-align:center;">
+    <a href="{% url 'admin_dashboard' %}">Back to Dashboard</a>
+  </p>
+</body>
+</html>

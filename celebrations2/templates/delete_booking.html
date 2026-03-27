@@ -1,0 +1,14 @@
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Confirm Deletion</h2>
+    <p>Are you sure you want to delete the booking by <strong>{{ booking.name }}</strong> for <strong>{{ booking.venue }}</strong> on <strong>{{ booking.date }}</strong>?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Yes, Delete</button>
+        <a href="{% url 'booking_list' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}
+

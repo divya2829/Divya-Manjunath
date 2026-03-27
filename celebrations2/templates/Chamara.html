@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chamara Vajra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("{% static 'photos/ven.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container video {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .info {
+            max-width: 400px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <video autoplay loop muted>
+            <source src="{% static 'videos/chamra.mp4' %}" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+        <div class="info">
+            <h2>Chamara Vajra</h2>
+
+            <p><strong>Venue Details:</strong></p>
+            <ul>
+                <li>Location: Vasanth Nagar, Bangalore</li>
+                <li>Known for: Weddings, receptions, corporate events, and cultural performances</li>
+                <li>Event Spaces: Indoor banquet halls and a large lawn area</li>
+            </ul>
+
+            <p><strong>Key Features:</strong></p>
+            <ul>
+                <li>Capacity: 150 to 6000 guests</li>
+                <li>Banquet Halls:
+                    <ul>
+                        <li>Maanikya, Marakata, and Mukta halls</li>
+                        <li>Dining hall with seating for 400 guests</li>
+                    </ul>
+                </li>
+                <li>Food & Catering:
+                    <ul>
+                        <li>Vegetarian-only in-house catering</li>
+                        <li>Can serve up to 2000 guests</li>
+                        <li>Outside catering is allowed</li>
+                    </ul>
+                </li>
+                <li>Decor:
+                    <ul>
+                        <li>In-house decorators available</li>
+                        <li>Outside decorators permitted</li>
+                    </ul>
+                </li>
+                <li>Facilities:
+                    <ul>
+                        <li>7 deluxe rooms with VIP suites</li>
+                        <li>Valet parking for up to 3000 vehicles</li>
+                        <li>Power backup and security services</li>
+                    </ul>
+                </li>
+                <li>Timings: 11:00 AM to 11:00 PM</li>
+                <li>Policies:
+                    <ul>
+                        <li>Late-night music not allowed</li>
+                        <li>Alcohol is strictly prohibited</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

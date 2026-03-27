@@ -1,0 +1,12 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Booking Confirmed</title>
+</head>
+<body>
+    <h1>Thank you, {{ booking.name }}!</h1>
+    <p>Your booking for the "{{ booking.theme }}" theme on {{ booking.date }} from {{ booking.start_time }} to {{ booking.end_time }} is confirmed.</p>
+</body>
+</html>

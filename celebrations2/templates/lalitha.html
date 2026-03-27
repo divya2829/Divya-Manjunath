@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lalitha Mahal Palace</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url("{% static 'photos/ven.jpg' %}");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 850px;
+        }
+
+        .container video {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .info {
+            max-width: 500px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <video autoplay loop muted>
+            <source src="{% static 'videos/yellow-theme-event-decor-unique-trending-eventplanner-explorepage-vidburner.com.mp4' %}" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+        <div class="info">
+            <h2>Lalitha Mahal Palace</h2>
+
+            <p><strong>Venue Details:</strong></p>
+            <p>
+                Located in Siddhartha Layout, Mysore, Lalitha Mahal Palace is a luxurious heritage venue perfect for grand celebrations like weddings, receptions, and corporate events. As a 4-star hotel, it features regal architecture and elegant banquet halls.
+            </p>
+
+            <ul>
+                <li>Guest Capacity: Up to 2,500 guests</li>
+                <li>Largest Hall: Seats 1,000; floating capacity of 2,000</li>
+                <li>Banquet Halls: 3 spacious halls with central AC, dressing rooms, and dining area</li>
+                <li>Catering:
+                    <ul>
+                        <li>In-house catering available</li>
+                        <li>Veg: ₹1,000/plate</li>
+                        <li>Non-veg: ₹1,200/plate (taxes extra)</li>
+                        <li>External caterers allowed</li>
+                    </ul>
+                </li>
+                <li>Supported Events: Weddings, receptions, sangeet, mehendi, birthdays, corporate functions</li>
+            </ul>
+
+            <p><strong>Pricing & Additional Info:</strong></p>
+            <ul>
+                <li>Hall Booking: Free with food; per plate pricing applies</li>
+                <li>Poolside Party: Available for up to 100 guests</li>
+                <li>Late-Night Weddings: Allowed with terms</li>
+                <li>Advance Booking: Deposit required for confirmation</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

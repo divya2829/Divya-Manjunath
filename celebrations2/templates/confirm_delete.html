@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Confirm Delete Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 25px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        button,
+        a {
+            padding: 10px 20px;
+            margin: 10px 5px 0 5px;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button {
+            background-color: #d9534f;
+            color: white;
+            border: none;
+        }
+
+        a {
+            background-color: #5bc0de;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Confirm Delete</h1>
+    <p>Are you sure you want to delete "{{ booking }}"?</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Yes, Delete</button>
+        <a href="{% url 'admin_dashboard' %}">Cancel</a>
+    </form>
+
+</body>
+
+</html>

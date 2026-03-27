@@ -1,0 +1,141 @@
+{% load static %}
+
+{% block content %}
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #8e2de2, #c039bd); /* dark pink to purple */
+    min-height: 100vh;
+    margin: 0;
+    padding: 2rem 1rem;
+    color: #f0e6ff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .container {
+    width: 95%;
+    max-width: 1100px;
+    background: rgba(43, 27, 61, 0.85);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.6);
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #e0b0ff;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: transparent;
+    color: #e6e6fa;
+  }
+
+  thead {
+    background: linear-gradient(90deg, #6a0572, #a32cc4);
+    color: white;
+  }
+
+  thead th {
+    padding: 10px;
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: rgba(62, 39, 97, 0.7);
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: rgba(81, 45, 109, 0.7);
+  }
+
+  tbody td {
+    padding: 10px;
+    vertical-align: middle;
+  }
+
+  a.btn-primary {
+    background-color: #7b4fff;
+    border-color: #7b4fff;
+    color: white;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-right: 5px;
+  }
+
+  a.btn-primary:hover {
+    background-color: #935fff;
+    border-color: #935fff;
+  }
+
+  a.btn-danger {
+    background-color: #d6336c;
+    border-color: #d6336c;
+    color: white;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+
+  a.btn-danger:hover {
+    background-color: #e14e85;
+    border-color: #e14e85;
+  }
+
+  p.text-center {
+    color: #f3e6ff;
+  }
+</style>
+
+
+<div class="container">
+  <h2>Theme Bookings</h2>
+
+  {% if bookings %}
+  <div class="table-responsive">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Selected Theme</th>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Date</th>
+          <th>Start Time</th>
+          <th>End Time</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for booking in bookings %}
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ booking.selected_theme }}</td>
+          <td>{{ booking.name }}</td>
+          <td>{{ booking.phone }}</td>
+          <td>{{ booking.email }}</td>
+          <td>{{ booking.date|date:"M d, Y" }}</td>
+          <td>{{ booking.start_time|time:"H:i" }}</td>
+          <td>{{ booking.end_time|time:"H:i" }}</td>
+          <td>
+            <a href="{% url 'edit_theme_booking' booking.id %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'delete_theme_booking' booking.id %}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this booking?');">Delete</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+  <p class="text-center">No theme bookings available at the moment.</p>
+  {% endif %}
+</div>
+{% endblock %}

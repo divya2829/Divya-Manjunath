@@ -1,0 +1,14 @@
+
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Delete Theme Booking</h2>
+    <p>Are you sure you want to delete the booking for <strong>{{ booking.name }}</strong> ({{ booking.selected_theme }}) on <strong>{{ booking.date }}</strong>?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Yes, Delete</button>
+        <a href="{% url 'theme_booking_list' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}

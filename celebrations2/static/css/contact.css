@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(https://media.istockphoto.com/id/1470198552/vector/gold-background.jpg?s=612x612&w=0&k=20&c=e0Mz0kTAkwnp8yCKAqQz-1K8wUiPVkdgOluJqDrRcnE=);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 1000px;
+    width: 90%;
+    padding: 20px;
+    border: 2px solid black;
+    margin-top: 20px;
+    background: transparent;
+    backdrop-filter: blur(40px);
+    box-shadow: 10px 10px rgb(32, 26, 26);
+}
+
+.container img {
+    width: 500px;
+    height: 500px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+form {
+    border: 5px solid black;
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+}
+
+button:hover {
+    background: gold;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+    .container img,
+    form {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+    }
+
+    h1 {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }

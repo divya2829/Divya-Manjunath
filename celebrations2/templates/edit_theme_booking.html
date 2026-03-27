@@ -1,0 +1,122 @@
+{% load static %}
+
+{% block content %}
+<style>
+  body {
+    background: linear-gradient(135deg, #9c27b0, #6a0572);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    margin: 0;
+  }
+  .container {
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 60px auto;
+    padding: 30px 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(106, 5, 114, 0.7);
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: #fff;
+  }
+  label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+    color: #f3e6ff;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  input[type="time"] {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1rem;
+    box-sizing: border-box;
+    background-color: rgba(255,255,255,0.9);
+    color: #333;
+    transition: box-shadow 0.3s ease;
+  }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="date"]:focus,
+  input[type="time"]:focus {
+    outline: none;
+    box-shadow: 0 0 8px 2px #9c27b0;
+  }
+  .mb-3 {
+    margin-bottom: 18px;
+  }
+  button.btn-success {
+    background-color: #7b1fa2;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 0.3s ease;
+  }
+  button.btn-success:hover {
+    background-color: #6a0572;
+  }
+  a.btn-secondary {
+    display: inline-block;
+    background-color: #555;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 15px;
+    transition: background-color 0.3s ease;
+  }
+  a.btn-secondary:hover {
+    background-color: #444;
+  }
+</style>
+
+<div class="container mt-5">
+    <h2>Edit Theme Booking</h2>
+    <form method="post" novalidate>
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="selected_theme" class="form-label">Selected Theme</label>
+            <input type="text" name="selected_theme" class="form-control" value="{{ form.selected_theme.value }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" name="name" class="form-control" value="{{ form.name.value }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="text" name="phone" class="form-control" value="{{ form.phone.value }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" value="{{ form.email.value }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" name="date" class="form-control" value="{{ form.date.value }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="start_time" class="form-label">Start Time</label>
+            <input type="time" name="start_time" class="form-control" value="{{ form.start_time.value }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="end_time" class="form-label">End Time</label>
+            <input type="time" name="end_time" class="form-control" value="{{ form.end_time.value }}" required>
+        </div>
+        <button type="submit" class="btn btn-success">Save Changes</button>
+        <a href="{% url 'theme_booking_list' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Admin Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to the Custom Admin Dashboard</h1>
+
+    <ul>
+        <li><a href="{% url 'admin:index' %}">Django Admin Site</a></li>
+        <li><a href="{% url 'admin:alfa2_booking_changelist' %}">Manage Bookings</a></li>
+        <li><a href="{% url 'admin:alfa2_category_changelist' %}">Manage Categories</a></li>
+        <li><a href="{% url 'admin:alfa2_themebooking_changelist' %}">Manage Theme Bookings</a></li>
+        <!-- Add more links as needed -->
+    </ul>
+</body>
+</html>

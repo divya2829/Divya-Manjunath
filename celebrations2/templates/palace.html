@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Palace Sheesh Mahal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("{% static 'photos/ven.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container video {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .info {
+            max-width: 400px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <video autoplay loop muted>
+            <source src="{% static 'videos/palace.mp4' %}" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+        <div class="info">
+            <h2>Palace Sheesh Mahal</h2>
+
+            <p><strong>Venue Details:</strong></p>
+            <ul>
+                <li>Location: Palace Grounds, Bangalore</li>
+                <li>Known for its luxurious ambiance and spacious capacity</li>
+            </ul>
+
+            <p><strong>Capacity & Space:</strong></p>
+            <ul>
+                <li>Seating Capacity: 2,000 guests</li>
+                <li>Floating Capacity: Up to 5,000 guests</li>
+                <li>Event Areas: Banquet hall and outdoor lawn area</li>
+            </ul>
+
+            <p><strong>Facilities & Policies:</strong></p>
+            <ul>
+                <li>Catering:
+                    <ul>
+                        <li>No in-house catering</li>
+                        <li>Outside caterers allowed</li>
+                        <li>Both veg and non-veg options permitted</li>
+                    </ul>
+                </li>
+                <li>Decoration:
+                    <ul>
+                        <li>Outside decorators allowed</li>
+                        <li>Decoration cost starts from ₹1,00,000</li>
+                    </ul>
+                </li>
+                <li>Alcohol:
+                    <ul>
+                        <li>Not available and not permitted from outside</li>
+                    </ul>
+                </li>
+                <li>Parking: Space for up to 1,000 vehicles</li>
+                <li>Music & DJ:
+                    <ul>
+                        <li>In-house DJ available</li>
+                        <li>Outside DJs allowed</li>
+                        <li>Late-night music not allowed</li>
+                    </ul>
+                </li>
+                <li>Wedding Rituals:
+                    <ul>
+                        <li>Baarat allowed</li>
+                        <li>Hawan permitted</li>
+                        <li>Overnight weddings allowed</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

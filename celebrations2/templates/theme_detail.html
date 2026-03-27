@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ theme.name }} - Theme Details</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <style>
+        .theme-image {
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .theme-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-5">
+        <div class="card theme-card">
+            <div class="row g-0">
+                <div class="col-md-6">
+                    {% if theme.image %}
+                        <img src="{{ theme.image.url }}" class="img-fluid theme-image w-100" alt="{{ theme.name }}">
+                    {% else %}
+                        <img src="{% static 'images/default.jpg' %}" class="img-fluid theme-image w-100" alt="No Image Available">
+                    {% endif %}
+                </div>
+                <div class="col-md-6 p-4">
+                    <h2 class="mb-3">{{ theme.name }}</h2>
+                    <p><strong>Category:</strong> {{ theme.category.name }}</p>
+                    <p><strong>Price:</strong> ₹{{ theme.price }}</p>
+                    <p><strong>Description:</strong></p>
+                    <p class="text-muted">{{ theme.description }}</p>
+                    <a href="{% url 'theme_booking' %}" class="btn btn-primary mt-3">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

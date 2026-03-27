@@ -1,0 +1,74 @@
+h1
+{
+    font-size: 50px;
+    text-align: center;
+    color: white;
+}
+h4{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+}
+body{
+    background-image: url(forgot.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    
+ }
+
+form {
+    border: 5px solid black;
+    height: auto;
+    width: 500px;
+    justify-self: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    margin-top: 40px;
+    padding-top: 10px;
+    background: transparent;
+    backdrop-filter: blur(20px);
+
+}
+
+label {
+
+    font-size: 20px;
+    padding-left: 3px;
+    font-weight: bold;
+    padding-top: 100px;
+    margin-top: 100px;
+
+
+
+}
+
+input {
+    width: 90%;
+    padding: 8px;
+    margin-top: 20px;
+    border: px1px solid #ccc;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin-top: 20px;
+
+}
+.login{
+    padding-top: 10px;
+}
+button {
+
+    font-size: 20px;
+    padding: 20px;
+    margin-left: 145px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-image: linear-gradient(blue,pink);
+}

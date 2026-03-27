@@ -1,0 +1,271 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking</title>
+    <link rel="stylesheet" href="{% static 'css/booking.css' %}" />
+</head>
+
+<body>
+    <h1>Alfa Shockwave Celebrations</h1>
+    <h3>Booking Events</h3>
+    <div class="booking"
+         style="background-image: url('{% static 'photos/booking.jpg' %}'); background-size: cover; background-position: center;">
+
+        <form method="post" action="{% url 'booking' %}" id="bookingForm" novalidate>
+            {% csrf_token %}
+            <div class="img">
+                <img src="{% static 'photos/logo.jpg' %}" alt="Logo"
+                     style="height: 300px; width: 300px; padding-left: 100px;">
+            </div>
+
+            <div class="booking">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+
+            <div class="booking">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+
+            <div class="booking">
+                <label for="phone">Phone No:</label>
+                <input type="text" name="phone" id="phone" required>
+            </div>
+
+            <div class="booking">
+                <label for="date">Select Event Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="booking">
+                <label for="venue">Venue:</label>
+                <input type="text" id="venue" name="venue" readonly>
+            </div>
+
+            <h3>Payment Options</h3>
+            <div class="payment-options">
+                <div class="booking">
+                    <label for="payment">Payment Mode:</label>
+                    <input type="text" id="payment" name="payment" value="Only cash is accepted" readonly>
+                </div>
+            </div>
+
+            <button type="submit">Submit Booking</button>
+        </form>
+    </div>
+
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param) || "";
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const venueInput = document.getElementById("venue");
+            const venue = getQueryParam("venue");
+            if (venue) {
+                venueInput.value = decodeURIComponent(venue);
+            }
+
+            const form = document.getElementById("bookingForm");
+            const dateInput = document.getElementById("date");
+
+            // Block past dates
+            const today = new Date().toISOString().split("T")[0];
+            dateInput.setAttribute("min", today);
+
+            form.addEventListener("submit", function (event) {
+                const name = document.getElementById("name").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const phone = document.getElementById("phone").value.trim();
+                const date = dateInput.value.trim();
+
+                // Name validation
+                if (!/^[A-Za-z\s]+$/.test(name)) {
+                    alert("Name should contain only alphabets.");
+                    event.preventDefault();
+                    return;
+                }
+
+                // Email validation
+                if (email === "" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    alert("Please enter a valid email address.");
+                    event.preventDefault();
+                    return;
+                }
+
+                // Phone validation
+                if (!/^\d{10}$/.test(phone)) {
+                    alert("Phone number must be exactly 10 digits.");
+                    event.preventDefault();
+                    return;
+                }
+
+                // Date validation
+                if (date === "") {
+                    alert("Please select an event date.");
+                    event.preventDefault();
+                    return;
+                }
+
+                // Success message (PDF will be downloaded after form is submitted)
+                alert("Booking submitted successfully! Your PDF confirmation will download shortly.");
+                // Let the form submit to the server
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+
+<!-- {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Booking</title>
+    <link rel="stylesheet" href="{% static 'css/booking.css' %}" />
+</head>
+
+<body>
+    <h1>Alfa Shockwave Celebrations</h1>
+    <h3>Booking Events</h3>
+
+    <div class="booking" style="background-image: url('{% static 'photos/booking.jpg' %}'); background-size: cover; background-position: center;">
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <form method="post" action="{% url 'booking' %}" id="bookingForm" novalidate>
+            {% csrf_token %}
+            <div class="img">
+                <img src="{% static 'photos/logo.jpg' %}" alt="Logo" style="height: 300px; width: 300px; padding-left: 100px;">
+            </div>
+
+            <div class="booking">
+                {{ form.name.label_tag }}
+                {{ form.name }}
+                {% if form.name.errors %}
+                    <div class="error">{{ form.name.errors }}</div>
+                {% endif %}
+            </div>
+
+            <div class="booking">
+                {{ form.email.label_tag }}
+                {{ form.email }}
+                {% if form.email.errors %}
+                    <div class="error">{{ form.email.errors }}</div>
+                {% endif %}
+            </div>
+
+            <div class="booking">
+                {{ form.phone.label_tag }}
+                {{ form.phone }}
+                {% if form.phone.errors %}
+                    <div class="error">{{ form.phone.errors }}</div>
+                {% endif %}
+            </div>
+
+            <div class="booking">
+                {{ form.date.label_tag }}
+                {{ form.date }}
+                {% if form.date.errors %}
+                    <div class="error">{{ form.date.errors }}</div>
+                {% endif %}
+            </div>
+
+            <div class="booking">
+                {{ form.venue.label_tag }}
+                {{ form.venue }}
+                {% if form.venue.errors %}
+                    <div class="error">{{ form.venue.errors }}</div>
+                {% endif %}
+            </div>
+
+            <h3>Payment Options</h3>
+            <div class="payment-options">
+                <div class="booking">
+                    {{ form.payment.label_tag }}
+                    {{ form.payment }}
+                </div>
+            </div>
+
+            <button type="submit">Submit Booking</button>
+        </form>
+    </div>
+
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param) || "";
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const venueInput = document.getElementById("id_venue");
+            const venue = getQueryParam("venue");
+            if (venue && venueInput) {
+                venueInput.value = decodeURIComponent(venue);
+            }
+
+            const form = document.getElementById("bookingForm");
+            const dateInput = document.getElementById("id_date");
+
+            // Block past dates
+            const today = new Date().toISOString().split("T")[0];
+            if (dateInput) {
+                dateInput.setAttribute("min", today);
+            }
+
+            form.addEventListener("submit", function (event) {
+                const name = document.getElementById("id_name").value.trim();
+                const email = document.getElementById("id_email").value.trim();
+                const phone = document.getElementById("id_phone").value.trim();
+                const date = dateInput.value.trim();
+
+                // Name validation
+                if (!/^[A-Za-z\s]+$/.test(name)) {
+                    alert("Name should contain only alphabets.");
+                    event.preventDefault();
+                    return;
+                }
+
+                // Email validation
+                if (email === "" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    alert("Please enter a valid email address.");
+                    event.preventDefault();
+                    return;
+                }
+
+                // Phone validation
+                if (!/^\d{10}$/.test(phone)) {
+                    alert("Phone number must be exactly 10 digits.");
+                    event.preventDefault();
+                    return;
+                }
+
+                // Date validation
+                if (date === "") {
+                    alert("Please select an event date.");
+                    document.getElementById("date").setAttribute("min", new Date().toISOString().split("T")[0]);
+                    return;
+                }
+
+                alert("Booking submitted successfully! Your PDF confirmation will download shortly.");
+            });
+        });
+    </script>
+</body>
+
+</html> -->

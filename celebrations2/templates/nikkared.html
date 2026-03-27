@@ -1,0 +1,334 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nikka Red Theme</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .gallery-container {
+      max-height: 100vh;
+      overflow-y: auto;
+      padding: 40px 20px;
+      border-radius: 20px;
+      color: #FFD700;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .gallery .card {
+      background-color: rgba(255, 255, 255, 0.85);
+      border: none;
+      border-radius: 12px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .gallery .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      border-radius: 12px 12px 0 0;
+      object-fit: cover;
+      height: 200px;
+    }
+
+    .booking-button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #ffc107;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 4px 6px rgba(255, 193, 7, 0.3);
+      text-decoration: none;
+      margin-top: 30px;
+    }
+
+    .booking-button:hover {
+      background-color: #e0a800;
+      transform: scale(1.05);
+      box-shadow: 0 8px 12px rgba(255, 193, 7, 0.4);
+    }
+
+    .form-check-input {
+      margin-top: 10px;
+    }
+
+    .cost-label {
+      font-weight: bold;
+      margin-top: 10px;
+      color: #333;
+    }
+
+    .details-button {
+      margin-top: 10px;
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 20px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .details-button:hover {
+      background-color: #b02a37;
+    }
+  </style>
+</head>
+
+<body>
+
+  <video class="video-bg" autoplay loop muted>
+    <source src="{% static 'videos/galvideo.mp4' %}" type="video/mp4" />
+  </video>
+
+  <form id="bookingForm">
+    <div class="gallery-container text-light">
+      <h1 class="mb-4">Nikka Red Theme</h1>
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 gallery">
+
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/nikkared1.jpg' %}" alt="Simple Red Nikka Theme" />
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹40,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" value="Simple Red Nikka Theme" required />
+                  <label class="form-check-label">Select Simple Red Nikka Theme</label>
+                </div>
+                <button type="button" class="details-button" data-bs-toggle="modal" data-bs-target="#detailsModal1">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/nikkared2.jpg' %}" alt="Royal Red Cake" />
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹35,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" value="Royal Red Cake" />
+                  <label class="form-check-label">Select Royal Red Cake</label>
+                </div>
+                <button type="button" class="details-button" data-bs-toggle="modal" data-bs-target="#detailsModal2">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/nikkared3.jpg' %}" alt="Royal Nikka Wedding Theme" />
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹80,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" value="Royal Nikka Wedding Theme" />
+                  <label class="form-check-label">Select Royal Nikka Wedding Theme</label>
+                </div>
+                <button type="button" class="details-button" data-bs-toggle="modal" data-bs-target="#detailsModal3">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/nikkared4.jpg' %}" alt="Coloum Red Theme" />
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹60,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" value="Coloum Red Theme" />
+                  <label class="form-check-label">Select Coloum Red Theme</label>
+                </div>
+                <button type="button" class="details-button" data-bs-toggle="modal" data-bs-target="#detailsModal4">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/nikkared5.jpg' %}" alt="Red Theme with Cake" />
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹45,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" value="Red Theme with Cake" />
+                  <label class="form-check-label">Select Red Theme with Cake</label>
+                </div>
+                <button type="button" class="details-button" data-bs-toggle="modal" data-bs-target="#detailsModal5">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/nikkared6.jpg' %}" alt="Walkway Red Theme" />
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹20,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" value="Walkway Red Theme" />
+                  <label class="form-check-label">Select Walkway Red Theme</label>
+                </div>
+                <button type="button" class="details-button" data-bs-toggle="modal" data-bs-target="#detailsModal6">View Details</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-4">
+          <button type="button" class="booking-button" onclick="redirectToBookingPage();">🎊 Book Now</button>
+        </div>
+
+      </div>
+    </div>
+  </form>
+
+  <div class="modal fade" id="detailsModal1" tabindex="-1" aria-labelledby="detailsModalLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel1">Simple Red Nikka Theme Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-start">
+          <p>Balloons: 150 red & white flowers</p>
+          <p>Decor Colors: Red, White, Gold accents</p>
+          <p>Includes: Stage setup, floral arrangements, red carpet entrance</p>
+          <p>Seating: 50 chairs with red covers</p>
+          <p>Extras: Ambient lighting and music system</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="detailsModal2" tabindex="-1" aria-labelledby="detailsModalLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel2">Royal Red Cake Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-start">
+          <p>Balloons: 200 red flowers</p>
+          <p>Decor Colors: Deep Red, Gold, White</p>
+          <p>Includes: Multi-tier cake centerpiece, stage with drapes</p>
+          <p>Seating: 70 chairs with gold ribbons</p>
+          <p>Extras: Professional cake cutting setup</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="detailsModal3" tabindex="-1" aria-labelledby="detailsModalLabel3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel3">Royal Nikka Wedding Theme Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-start">
+          <p>Balloons: 300 red, white, and gold flowers</p>
+          <p>Decor Colors: Red, White, Gold</p>
+          <p>Includes: Full stage, floral arches, lighting design</p>
+          <p>Seating: 100 chairs with satin covers</p>
+          <p>Extras: Live music area and photo booth</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="detailsModal4" tabindex="-1" aria-labelledby="detailsModalLabel4" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel4">Coloum Red Theme Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-start">
+          <p>Balloons: 180 red and white flowers</p>
+          <p>Decor Colors: Red, White</p>
+          <p>Includes: Column arches, stage drapes</p>
+          <p>Seating: 60 chairs with red covers</p>
+          <p>Extras: Spot lighting and soft background music</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="detailsModal5" tabindex="-1" aria-labelledby="detailsModalLabel5" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel5">Red Theme with Cake Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-start">
+          <p>Balloons: 220 red flowers</p>
+          <p>Decor Colors: Red, White, Pink</p>
+          <p>Includes: Cake centerpiece, floral decorations</p>
+          <p>Seating: 80 chairs with red and white covers</p>
+          <p>Extras: Cake cutting ceremony setup and lighting</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="detailsModal6" tabindex="-1" aria-labelledby="detailsModalLabel6" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel6">Walkway Red Theme Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-start">
+          <p>Balloons: 100 red flowers</p>
+          <p>Decor Colors: Red, White</p>
+          <p>Includes: Walkway arch, side floral arrangements</p>
+          <p>Seating: 40 chairs with red ribbons</p>
+          <p>Extras: Ambient pathway lighting</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function redirectToBookingPage() {
+      const selectedTheme = document.querySelector('input[name="theme"]:checked');
+      if (!selectedTheme) {
+        alert("Please select a theme before booking.");
+        return;
+      }
+      const themeName = encodeURIComponent(selectedTheme.value);
+      window.location.href = "{% url 'theme_booking' %}?theme=" + themeName;
+    }
+  </script>
+
+</body>
+
+</html>

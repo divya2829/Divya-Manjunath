@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Theme Deletion</title>
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fefefe;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .confirm-box {
+            max-width: 500px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #b30000;
+        }
+
+        .btn-group {
+            margin-top: 20px;
+        }
+
+        .btn-group button, .btn-group a {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn-confirm {
+            background-color: #d9534f;
+            color: white;
+        }
+
+        .btn-cancel {
+            background-color: #5bc0de;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="confirm-box">
+        <h2>Are you sure you want to delete the theme "{{ theme.name }}"?</h2>
+        <p>This action cannot be undone.</p>
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="btn-group">
+                <button type="submit" class="btn-confirm">Yes, Delete</button>
+                <a href="{% url 'theme_list' %}" class="btn-cancel">Cancel</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

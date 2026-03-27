@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Dashboard</title>
+  <style>
+    /* Reset some basics */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 40px 20px;
+      background: linear-gradient(135deg, #6a0572, #8e44ad);
+      color: #f0e7f9;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: 3rem;
+      margin-bottom: 50px;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      letter-spacing: 1.2px;
+      text-align: center;
+    }
+
+    .dashboard {
+      max-width: 900px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      padding: 0 10px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      padding: 25px 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(10px);
+      cursor: default;
+      color: #e0d7f5;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(106, 5, 114, 0.7);
+      color: #fff;
+    }
+
+    .card h2 {
+      font-size: 1.75rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+      color: #ffb3ff;
+      text-shadow: 0 0 5px rgba(255, 179, 255, 0.6);
+    }
+
+    .card p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 25px;
+      color: #d4c9e9;
+    }
+
+    .card a {
+      display: inline-block;
+      padding: 12px 25px;
+      border-radius: 30px;
+      background: #b45de0;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 6px 12px rgba(180, 93, 224, 0.6);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card a:hover {
+      background-color: #8e44ad;
+      box-shadow: 0 8px 20px rgba(142, 68, 173, 0.9);
+    }
+
+    .logout {
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    .logout a {
+      font-weight: 700;
+      color: #ff6f91;
+      font-size: 1.15rem;
+      text-decoration: none;
+      border: 2px solid #ff6f91;
+      padding: 10px 25px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(255, 111, 145, 0.6);
+      display: inline-block;
+    }
+
+    .logout a:hover {
+      background-color: #ff6f91;
+      color: #fff;
+      box-shadow: 0 6px 18px rgba(255, 111, 145, 0.9);
+      text-decoration: none;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+      }
+      .card h2 {
+        font-size: 1.4rem;
+      }
+      .card p {
+        font-size: 0.9rem;
+      }
+      .card a {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Admin Dashboard</h1>
+  <div class="dashboard">
+    <div class="card">
+      <h2>Themes</h2>
+      <p>Manage your event themes here.</p>
+      <a href="{% url 'theme_list' %}">Manage Themes</a>
+    </div>
+
+    <div class="card">
+      <h2>Bookings</h2>
+      <p>View and manage all bookings.</p>
+      <a href="{% url 'booking_list' %}">Manage Bookings</a>
+    </div>
+
+    <div class="card">
+      <h2>Theme Bookings</h2>
+      <p>Manage bookings for themes.</p>
+      <a href="{% url 'theme_booking_list' %}">Manage Theme Bookings</a>
+    </div>
+
+    <div class="card">
+      <h2>Users</h2>
+      <p>View registered users.</p>
+      <a href="{% url 'user_list' %}">View Users</a>
+    </div>
+  </div>
+
+  <div class="logout">
+    <a href="{% url 'logout' %}">Logout</a>
+  </div>
+</body>
+</html>

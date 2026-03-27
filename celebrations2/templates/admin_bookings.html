@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>User Bookings - Admin Panel</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th, td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      h2 {
+        margin-bottom: 20px;
+      }
+    </style>
+</head>
+<body>
+  <h2>User Bookings</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th><th>Email</th><th>Phone</th>
+        <th>Venue</th><th>Date</th><th>Payment</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for booking in bookings %}
+        <tr>
+          <td>{{ booking.name }}</td>
+          <td>{{ booking.email }}</td>
+          <td>{{ booking.phone }}</td>
+          <td>{{ booking.venue.name }}</td>
+          <td>{{ booking.event_date }}</td>
+          <td>{{ booking.payment }}</td>
+        </tr>
+      {% empty %}
+        <tr><td colspan="6">No bookings found.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>

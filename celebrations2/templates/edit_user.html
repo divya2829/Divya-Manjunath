@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit User</title>
+</head>
+<body>
+    <h1>Edit User: {{ user.username }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label>Username:</label><br>
+        <input type="text" name="username" value="{{ user.username }}"><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email" value="{{ user.email }}"><br><br>
+
+        <label>
+            <input type="checkbox" name="is_staff" {% if user.is_staff %}checked{% endif %}> Is Staff
+        </label><br>
+
+        <label>
+            <input type="checkbox" name="is_active" {% if user.is_active %}checked{% endif %}> Is Active
+        </label><br><br>
+
+        <button type="submit">Save Changes</button>
+        <a href="{% url 'manage_users' %}">Cancel</a>
+    </form>
+</body>
+</html>

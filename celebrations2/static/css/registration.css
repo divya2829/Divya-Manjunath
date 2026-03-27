@@ -1,0 +1,89 @@
+h1,
+h3 {
+    text-align: center;
+}
+h1{
+    font-family: "Playwrite IT Moderna", cursive;
+}
+h3{
+    font-size: 20px;
+}
+body{
+   background-image: url(regestration.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   margin: 0px;
+   
+}
+
+form {
+    border: 5px solid black;
+    height: auto;
+    width: 500px;
+    justify-self: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    padding-top: 10px;
+    background: transparent;
+    backdrop-filter: blur(20px);
+
+}
+
+label {
+
+    font-size: 20px;
+    padding-left: 3px;
+    font-weight: bold;
+    padding-top: 100px;
+    margin-top: 10px;
+
+
+
+}
+
+input {
+    width: 90%;
+    padding: 8px;
+    margin-top: 20px;
+    border: px1px solid #ccc;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+select {
+    width: 94%;
+    padding: 8px;
+    margin-top: 5px;
+    border: px1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding-left: 10px;
+
+}
+
+.registration {
+    padding-top: 10px;
+}
+
+button {
+    font-size: 20px;
+    padding: 20px;
+    margin-left: 180px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: pink;
+}
+
+.playwrite-it-moderna{
+    font-family: "Playwrite IT Moderna", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }

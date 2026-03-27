@@ -1,0 +1,241 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Baby Shower Krishna Theme</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .gallery-container {
+      max-height: 100vh;
+      overflow-y: auto;
+      padding: 40px 20px;
+      border-radius: 20px;
+      color: #FFD700;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .gallery .card {
+      background-color: rgba(255, 255, 255, 0.85);
+      border: none;
+      border-radius: 12px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .gallery .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      border-radius: 12px 12px 0 0;
+      object-fit: cover;
+      height: 200px;
+    }
+
+    .booking-button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #ffc107;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 4px 6px rgba(255, 193, 7, 0.3);
+      text-decoration: none;
+      margin-top: 30px;
+    }
+
+    .booking-button:hover {
+      background-color: #e0a800;
+      transform: scale(1.05);
+      box-shadow: 0 8px 12px rgba(255, 193, 7, 0.4);
+    }
+
+    .form-check-input {
+      margin-top: 10px;
+    }
+
+    .cost-label {
+      font-weight: bold;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+
+  <video class="video-bg" autoplay loop muted>
+    <source src="{% static 'videos/galvideo.mp4' %}" type="video/mp4">
+  </video>
+
+  <form id="bookingForm">
+    <div class="gallery-container text-light">
+      <h1 class="mb-4">Baby Shower Krishna Theme</h1>
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 gallery">
+
+          <!-- Image 1 -->
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/showerkrishna1.jpg' %}" alt="Radha Krishna Theme">
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹40,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" value="Radha Krishna Theme" required>
+                  <label class="form-check-label">Select Radha Krishna Theme</label>
+                </div>
+                <button type="button" class="btn btn-outline-primary mt-2" data-bs-toggle="modal" data-bs-target="#details1">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image 2 -->
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/showerkrishna2.jpg' %}" alt="Royal Peacock Cake">
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹35,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" value="Royal Peacock Cake">
+                  <label class="form-check-label">Select Royal Peacock Cake</label>
+                </div>
+                <button type="button" class="btn btn-outline-primary mt-2" data-bs-toggle="modal" data-bs-target="#details2">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image 3 -->
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/showerkrishna3.jpg' %}" alt="Yashoda & Krishna Theme">
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹50,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" value="Yashoda & Krishna Theme">
+                  <label class="form-check-label">Select Yashoda & Krishna Theme</label>
+                </div>
+                <button type="button" class="btn btn-outline-primary mt-2" data-bs-toggle="modal" data-bs-target="#details3">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image 4 -->
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/showerkrishna4.jpg' %}" alt="Royal Krishna Flute Theme">
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹60,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" value="Royal Krishna Flute Theme">
+                  <label class="form-check-label">Select Royal Krishna Flute Theme</label>
+                </div>
+                <button type="button" class="btn btn-outline-primary mt-2" data-bs-toggle="modal" data-bs-target="#details4">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image 5 -->
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/showerkrishna5.jpg' %}" alt="Krishna Flute Theme">
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹45,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" value="Krishna Flute Theme">
+                  <label class="form-check-label">Select Krishna Flute Theme</label>
+                </div>
+                <button type="button" class="btn btn-outline-primary mt-2" data-bs-toggle="modal" data-bs-target="#details5">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image 6 -->
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/showerkrishna6.jpg' %}" alt="Peacock Theme">
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹20,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" value="Peacock Theme">
+                  <label class="form-check-label">Select Peacock Theme</label>
+                </div>
+                <button type="button" class="btn btn-outline-primary mt-2" data-bs-toggle="modal" data-bs-target="#details6">View Details</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-4">
+          <button type="button" class="booking-button" onclick="redirectToBookingPage();">🎊 Book Now</button>
+        </div>
+
+      </div>
+    </div>
+  </form>
+
+  <!-- Modals for View Details -->
+  <div class="modal fade" id="details1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Radha Krishna Theme</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">Includes 300+ balloons (blue, yellow, white), Radha Krishna statue, decorative swing, backdrop with lights, floral garlands, and themed seating.</div></div></div>
+  </div>
+
+  <div class="modal fade" id="details2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Royal Peacock Cake</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">Designer peacock cake setup with gold-blue drapes, LED cake table, floral centerpieces, and peacock feathers décor.</div></div></div>
+  </div>
+
+  <div class="modal fade" id="details3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Yashoda & Krishna Theme</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">Life-size cutouts of Yashoda and Krishna, cradle setup, pink and blue balloon garlands, floral entrance, and backdrop story board.</div></div></div>
+  </div>
+
+  <div class="modal fade" id="details4" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Royal Krishna Flute Theme</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">Gold and ivory theme, Krishna’s flute replica décor, 500+ balloons, royal chair, thematic rangoli design, and light arch.</div></div></div>
+  </div>
+
+  <div class="modal fade" id="details5" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Krishna Flute Theme</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">Flute centerpiece, 400+ balloons in yellow, blue, and white, flute cake table, floral pathway, and hanging lights.</div></div></div>
+  </div>
+
+  <div class="modal fade" id="details6" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Peacock Theme</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body">Peacock backdrop, 250+ balloons (green, teal, purple), theme stage, feathers decor, and mood lighting effects.</div></div></div>
+  </div>
+
+  <script>
+    function redirectToBookingPage() {
+      const selectedTheme = document.querySelector('input[name="theme"]:checked');
+      if (selectedTheme) {
+        const themeLabel = selectedTheme.parentElement.innerText.trim();
+        const bookingUrl = "{% url 'theme_booking' %}?theme=" + encodeURIComponent(themeLabel);
+        window.location.href = bookingUrl;
+      } else {
+        alert("Please select a theme.");
+      }
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

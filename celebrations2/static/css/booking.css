@@ -1,0 +1,110 @@
+h1,
+h3 {
+    text-align: center;
+}
+
+h1 {
+    font-family: "Playwrite IT Moderna", cursive;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+body {
+    background-image: url(booking.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+}
+
+form {
+    border: 5px solid black;
+    height: auto;
+    width: 500px;
+    justify-self: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    padding-top: 10px;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    
+
+}
+
+label {
+
+    font-size: 20px;
+    padding-left: 3px;
+    font-weight: bold;
+    padding-top: 100px;
+    margin-top: 10px;
+
+}
+
+input {
+   
+    width: 90%;
+    padding: 8px;
+    margin-top: 20px;
+    border: px1px solid #ccc;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+select {
+    width: 94%;
+    padding: 8px;
+    margin-top: 5px;
+    border: px1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding-left: 10px;
+
+}
+
+.booking {
+    padding-top: 10px;
+    
+}
+
+.img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+img{
+    border-radius: 10px;
+}
+button {
+    font-size: 20px;
+    padding: 20px;
+    margin-left: 150px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: linear-gradient(wheat, rgb(42, 69, 50));
+    /* background: rgb(42, 69, 50); */
+}
+
+select{
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.payment-options img{
+    padding: 20px;
+    margin-left: 30px;
+}
+.booking1 label{
+    padding: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}

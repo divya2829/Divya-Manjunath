@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Users List</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 30px; background: #f9f9f9; }
+    h1 { text-align: center; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+    th { background: #6f42c1; color: white; }
+    .topbar { margin-bottom: 20px; }
+    a.button {
+      background-color: #6f42c1; color: white; padding: 6px 12px; border-radius: 4px; text-decoration: none;
+      font-weight: bold;
+    }
+    a.button:hover { background-color: #5936a2; }
+  </style>
+</head>
+<body>
+  <h1>Users</h1>
+  <div class="topbar">
+    <a href="{% url 'admin_dashboard' %}">Back to Dashboard</a>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Date Joined</th>
+        <th>Is Staff</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+      <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.date_joined|date:"Y-m-d" }}</td>
+        <td>{{ user.is_staff }}</td>
+      </tr>
+      {% empty %}
+      <tr><td colspan="5" style="text-align:center;">No users found.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>

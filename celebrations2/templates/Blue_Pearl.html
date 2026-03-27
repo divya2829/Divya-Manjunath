@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blue Pearl Banquet Hall</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("{% static 'photos/ven.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container video {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .info {
+            max-width: 400px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <video autoplay loop muted>
+            <source src="{% static 'videos/blue1.mp4' %}" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+        <div class="info">
+            <h2>Blue Pearl Banquet Hall</h2>
+
+            <p><strong>Venue Details:</strong></p>
+            <ul>
+                <li>Location: RT Nagar, Bangalore</li>
+                <li>Suitable for: Weddings, receptions, engagements, and other functions</li>
+            </ul>
+
+            <p><strong>Key Features & Facilities:</strong></p>
+            <ul>
+                <li>Guest Capacity:
+                    <ul>
+                        <li>Main hall: 200–300 guests seating</li>
+                        <li>Additional hall: 70 seating, 150 floating</li>
+                    </ul>
+                </li>
+                <li>Price: ₹77,500 per day</li>
+                <li>Booking Policy:
+                    <ul>
+                        <li>10% advance payment</li>
+                        <li>Remaining 90% due before the event</li>
+                    </ul>
+                </li>
+                <li>Catering:
+                    <ul>
+                        <li>Both vegetarian and non-vegetarian options available</li>
+                        <li>Outside catering is allowed</li>
+                    </ul>
+                </li>
+                <li>Decor:
+                    <ul>
+                        <li>In-house decorators available</li>
+                        <li>Outside decorators not permitted</li>
+                    </ul>
+                </li>
+                <li>DJ & Music:
+                    <ul>
+                        <li>No in-house DJ</li>
+                        <li>Outside DJs not permitted</li>
+                    </ul>
+                </li>
+                <li>Parking:
+                    <ul>
+                        <li>Space for 5–40 cars</li>
+                        <li>Valet service not provided</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p><strong>Location:</strong><br />
+                📍 Address: No. 541, CBI Road, HMT Layout, Ganganagar, RT Nagar, Bangalore
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

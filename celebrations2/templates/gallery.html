@@ -1,0 +1,180 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Explore our event gallery showcasing stunning decorations and setups for your special occasions." />
+    <title>Venues Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0px;
+            position: relative;
+        }
+
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .gallery-container {
+            max-height: 100vh;
+            overflow-y: auto;
+            padding: 20px;
+            border-radius: 20px;
+            color: #FFD700;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+            padding: 10px;
+        }
+
+        .item {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .item:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+        .item img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .price {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: larger;
+        }
+
+        a:hover {
+            color: gold;
+        }
+    </style>
+</head>
+
+<body>
+    <video class="video-bg" autoplay loop muted>
+        <source src="{% static 'videos/galvideo.mp4' %}" type="video/mp4" />
+    </video>
+    <nav>
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'gallery' %}">Gallery</a></li>
+            <li><a href="{% url 'Venue' %}">Venue</a></li>
+            <li><a href="{% url 'themes' %}">Themes</a></li>
+            <li><a href="{% url 'contact' %}">Contacts</a></li>
+        </ul>
+    </nav>
+    <div class="gallery-container">
+        <br /><br />
+        <h1>Gallery</h1>
+        <div class="gallery">
+            <div class="item">
+                <img src="{% static 'photos/gall5.jpg' %}" alt="Elegant wedding decor setup" />
+            </div>
+            <div class="item">
+                <img src="{% static 'photos/gall2.jpg' %}" alt="Luxurious party arrangement" />
+            </div>
+            <div class="item">
+                <img src="{% static 'photos/gall3.jpg' %}" alt="Grand banquet hall decoration" />
+            </div>
+            <div class="item">
+                <img src="{% static 'photos/gall4.jpg' %}" alt="Glamorous stage setup" />
+            </div>
+            <div class="item">
+                <img src="{% static 'photos/gall5.jpg' %}" alt="Glamorous stage" />
+            </div>
+            <div class="item">
+                <img src="{% static 'photos/gall6.jpg' %}" alt="Glamorous" />
+            </div>
+            <div class="item">
+                <img src="{% static 'photos/gall7.jpg' %}" alt="Elegant wedding decor setup" />
+            </div>
+            <div class="item">
+                <img src="{% static 'photos/gall8.jpg' %}" alt="Luxurious party arrangement" />
+            </div>
+            <div class="item">
+                <img src="{% static 'photos/gall9.jpg' %}" alt="Grand banquet hall decoration" />
+            </div>
+            <div class="item">
+                <img src="{% static 'photos/gall11.jpg' %}" alt="Elegant wedding decor setup" />
+            </div>
+            <div class="item">
+                <img src="{% static 'photos/gallery5.jpg' %}" alt="Luxurious party arrangement" />
+            </div>
+            <div class="item">
+                <img src="{% static 'photos/gall13.jpg' %}" alt="Grand banquet hall decoration" />
+            </div>
+            <div class="item">
+                <img src="{% static 'photos/gall4.jpg' %}" alt="Elegant wedding decor setup" />
+            </div>
+            <div class="item">
+                <img src="{% static 'photos/gallerry4.jpg' %}" alt="Luxurious party arrangement" />
+            </div>
+            <div class="item">
+                <img src="{% static 'photos/gallery6.jpg' %}" alt="Grand banquet hall decoration" />
+            </div>
+            <div class="item">
+                <img src="{% static 'photos/gallery9.jpg' %}" alt="Luxurious party arrangement" />
+            </div>
+            <div class="item">
+                <img src="{% static 'photos/gallery7.jpg' %}" alt="Grand banquet hall decoration" />
+            </div>
+            <div class="item">
+                <img src="{% static 'photos/gallary 5.jpg' %}" alt="Elegant wedding decor setup" />
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

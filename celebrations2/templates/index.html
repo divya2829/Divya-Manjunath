@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Use Django static template tag for CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <div class="hero">
+        <video autoplay loop muted>
+            <source src="{% static 'videos/background.mp4' %}" type="video/mp4">
+            <source src="{% static 'videos/background.ogg' %}" type="video/ogg">
+        </video>
+        <div class="overlaw"></div>
+
+        <img src="{% static 'photos/logo.jpg' %}" alt="Logo" class="logo">
+        <div class="text-container">
+            Alfa Shockwave Celebrations <br>
+            <q>Join us for the electrifying Alfa Shockwave Celebrations, where innovation meets excitement! Experience
+                thrilling events, cutting-edge technology, and unforgettable moments!</q>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                <li><a href="{% url 'Venue' %}">Venue</a></li>
+                <li><a href="{% url 'themes' %}">Themes</a></li>
+                <li><a href="{% url 'contact' %}">Contacts</a></li>
+            </ul>
+        </nav>
+    </div>
+
+</body>
+
+</html>

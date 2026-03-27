@@ -1,0 +1,330 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bride Pink Theme</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .gallery-container {
+      max-height: 100vh;
+      overflow-y: auto;
+      padding: 40px 20px;
+      border-radius: 20px;
+      color: #FFD700;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .gallery .card {
+      background-color: rgba(255, 255, 255, 0.85);
+      border: none;
+      border-radius: 12px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .gallery .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      border-radius: 12px 12px 0 0;
+      object-fit: cover;
+      height: 200px;
+    }
+
+    .booking-button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #ffc107;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 4px 6px rgba(255, 193, 7, 0.3);
+      text-decoration: none;
+      margin-top: 30px;
+    }
+
+    .booking-button:hover {
+      background-color: #e0a800;
+      transform: scale(1.05);
+      box-shadow: 0 8px 12px rgba(255, 193, 7, 0.4);
+    }
+
+    .form-check-input {
+      margin-top: 10px;
+    }
+
+    .cost-label {
+      font-weight: bold;
+      margin-top: 10px;
+      color: #333;
+    }
+
+    .details-button {
+      margin-top: 10px;
+      background: transparent;
+      border: none;
+      color: #007bff;
+      cursor: pointer;
+      text-decoration: underline;
+      font-size: 14px;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <video class="video-bg" autoplay loop muted>
+    <source src="{% static 'videos/galvideo.mp4' %}" type="video/mp4" />
+  </video>
+
+  <form id="bookingForm">
+    <div class="gallery-container text-light">
+      <h1 class="mb-4">Bride Pink Theme</h1>
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 gallery">
+
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/bridepink1.jpg' %}" alt="Yellow Theme 1" />
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹10,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" value="Yellow Theme 1" required />
+                  <label class="form-check-label">Select Cake</label>
+                </div>
+                <button type="button" class="details-button" data-bs-toggle="modal" data-bs-target="#modal1">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/bridepink2.jpg' %}" alt="Yellow Cake" />
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹35,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" value="Yellow Cake" />
+                  <label class="form-check-label">Select Moon Theme</label>
+                </div>
+                <button type="button" class="details-button" data-bs-toggle="modal" data-bs-target="#modal2">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/bridepink3.jpg' %}" alt="Yellow Theme 2" />
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹20,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" value="Yellow Theme 2" />
+                  <label class="form-check-label">Select Pink & Gold Theme</label>
+                </div>
+                <button type="button" class="details-button" data-bs-toggle="modal" data-bs-target="#modal3">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/bridepink4.jpg' %}" alt="Yellow Theme 3" />
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹42,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" value="Yellow Theme 3" />
+                  <label class="form-check-label">Select Moon Pink & Bronze Theme</label>
+                </div>
+                <button type="button" class="details-button" data-bs-toggle="modal" data-bs-target="#modal4">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/bridepink5.jpg' %}" alt="Yellow Theme 4" />
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹15,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" value="Yellow Theme 4" />
+                  <label class="form-check-label">Select Simple Pink Theme</label>
+                </div>
+                <button type="button" class="details-button" data-bs-toggle="modal" data-bs-target="#modal5">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 text-center">
+              <img src="{% static 'photos/bridepink6.jpg' %}" alt="Yellow Theme 5" />
+              <div class="card-body">
+                <p class="cost-label">Approx Cost: ₹30,000</p>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="theme" value="Yellow Theme 5" />
+                  <label class="form-check-label">Select Pink & White Theme</label>
+                </div>
+                <button type="button" class="details-button" data-bs-toggle="modal" data-bs-target="#modal6">View Details</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-4">
+          <button type="button" class="booking-button" onclick="redirectToBookingPage();">🎊 Book Now</button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <div class="modal fade" id="modal1" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title">Yellow Theme 1 - Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-start">
+          <ul>
+            <li>250 Balloons</li>
+            <li>Colors: Soft Pink & White</li>
+            <li>Includes Balloon Arch and Cake Table Setup</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal2" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title">Yellow Cake - Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-start">
+          <ul>
+            <li>450 Balloons</li>
+            <li>Colors: Pink, Gold & White</li>
+            <li>Includes Cake Stand, Fairy Lights, and Flowers</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal3" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title">Yellow Theme 2 - Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-start">
+          <ul>
+            <li>300 Balloons</li>
+            <li>Colors: Pink & Gold</li>
+            <li>Includes Backdrop and Table Decorations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal4" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title">Yellow Theme 3 - Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-start">
+          <ul>
+            <li>550 Balloons</li>
+            <li>Colors: Pink, Bronze & White</li>
+            <li>Includes Balloon Columns and Centerpieces</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal5" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title">Yellow Theme 4 - Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-start">
+          <ul>
+            <li>180 Balloons</li>
+            <li>Colors: Soft Pink</li>
+            <li>Includes Simple Balloon Clusters and Drapes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal6" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-dark">
+        <div class="modal-header">
+          <h5 class="modal-title">Yellow Theme 5 - Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-start">
+          <ul>
+            <li>400 Balloons</li>
+            <li>Colors: Pink & White</li>
+            <li>Includes Balloon Garland and Lighting Effects</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function redirectToBookingPage() {
+      const form = document.getElementById("bookingForm");
+      const selectedTheme = form.theme.value;
+
+      if (!selectedTheme) {
+        alert("Please select a theme before booking.");
+        return;
+      }
+      // Change this URL to your actual Django booking URL pattern name or path
+      const bookingUrl = "{% url 'theme_booking' %}?theme=" + encodeURIComponent(selectedTheme);
+      window.location.href = bookingUrl;
+    }
+  </script>
+</body>
+
+</html>
